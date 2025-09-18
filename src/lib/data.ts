@@ -65,3 +65,21 @@ export const testimonials = [
     title: "Alumna, Class of 2023"
   }
 ];
+
+export const whyChooseUs = [
+  {
+    icon: 'BookOpen',
+    title: 'Expert Tutors',
+    description: 'Learn from the best in the industry with our experienced and dedicated faculty.',
+  },
+  {
+    icon: 'Users',
+    title: 'Online & Offline Courses',
+    description: 'Flexible learning options to suit your schedule and preferences.',
+  },
+  {
+    icon: 'Award',
+    title: 'Get Certificate',
+    description: 'Earn a valuable certificate to boost your career prospects upon completion.',
+  },
+]

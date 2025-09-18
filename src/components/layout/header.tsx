@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Menu, GraduationCap, Phone, Mail, MapPin, Search } from "lucide-react";
+import { Menu, GraduationCap, Phone, Mail, MapPin } from "lucide-react";
+import React from "react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -17,10 +18,19 @@ const navLinks = [
 
 export function Header() {
   const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="bg-background sticky top-0 z-50 border-b">
-      <div className="bg-secondary text-secondary-foreground py-2 text-sm">
+    <header className={cn("sticky top-0 z-50 transition-all duration-300", isScrolled ? 'bg-background shadow-md' : 'bg-transparent')}>
+       <div className={cn("bg-secondary text-secondary-foreground py-2 text-sm", isScrolled ? 'hidden' : 'block transition-all duration-300')}>
         <div className="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
             <div className="flex items-center gap-6">
                 <div className="flex items-center gap-2">
@@ -37,16 +47,16 @@ export function Header() {
                 </div>
             </div>
             <div className="hidden md:flex items-center gap-4">
-                <Link href="#" className="hover:text-accent">f</Link>
-                <Link href="#" className="hover:text-accent">t</Link>
-                <Link href="#" className="hover:text-accent">in</Link>
+                <Link href="#" className="hover:text-accent">Login</Link>
+                <span className="text-muted-foreground">/</span>
+                 <Link href="#" className="hover:text-accent">Register</Link>
             </div>
         </div>
       </div>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <GraduationCap className="h-8 w-8 text-accent" />
-          <span className="text-3xl font-bold font-headline text-primary">COLLEGE</span>
+          <GraduationCap className={cn("h-8 w-8", isScrolled ? 'text-primary' : 'text-accent')} />
+          <span className={cn("text-3xl font-bold font-headline", isScrolled ? 'text-primary' : 'text-white')}>APEX</span>
         </Link>
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
@@ -55,31 +65,30 @@ export function Header() {
               href={link.href}
               className={cn(
                 "relative text-lg font-medium transition-colors hover:text-accent",
-                pathname === link.href ? "text-accent" : "text-primary"
+                pathname === link.href ? "text-accent" : (isScrolled ? "text-primary" : "text-white")
               )}
             >
               {link.label}
               {pathname === link.href && (
-                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-2 h-2 bg-accent rounded-full" />
+                <span className="absolute -bottom-2 left-0 w-full h-0.5 bg-accent" />
               )}
             </Link>
           ))}
         </nav>
         <div className="hidden md:flex items-center gap-4">
-            <Search className="h-5 w-5 text-primary hover:text-accent cursor-pointer" />
-            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-none">
+            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full px-6 font-bold uppercase">
               <Link href="#">Admission Open</Link>
             </Button>
         </div>
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className={cn(isScrolled ? 'text-primary' : 'text-white', 'hover:bg-accent/20')}>
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
+            <SheetContent side="right" className="bg-background">
               <div className="flex flex-col space-y-4 pt-8">
                 {navLinks.map((link) => (
                   <Link

@@ -4,7 +4,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowRight, BookOpen, Globe, UserCheck } from "lucide-react";
+import { ArrowRight, BookOpen, Users, Award, GraduationCap, UserCheck } from "lucide-react";
+import { whyChooseUs } from "@/lib/data";
+import { GoldSeparator } from "@/components/shared/gold-separator";
 
 const infoCards = [
   {
@@ -15,7 +17,7 @@ const infoCards = [
   {
     title: "International Hubs",
     description: "Seamlessly visualize quality effectual capital without superior collaboration and idea sharing listically.",
-    icon: <Globe className="h-10 w-10 text-accent" />
+    icon: <GraduationCap className="h-10 w-10 text-accent" />
   },
   {
     title: "Bachelor's and Master's",
@@ -23,6 +25,14 @@ const infoCards = [
     icon: <UserCheck className="h-10 w-10 text-accent" />
   }
 ];
+
+const stats = [
+    { number: "120+", label: "Courses" },
+    { number: "50+", label: "Expert Tutors" },
+    { number: "5k+", label: "Students" },
+    { number: "20+", label: "Awards" },
+];
+
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-home');
@@ -44,41 +54,22 @@ export default function Home() {
           />
         )}
         <div className="relative z-10 max-w-4xl px-4 sm:px-6 lg:px-8 text-white container">
-          <p className="font-semibold text-accent tracking-widest">WELCOME TO COLLEGE</p>
+          <p className="font-semibold text-accent tracking-widest uppercase">Welcome to Apex Institute</p>
           <h1 className="text-5xl font-extrabold tracking-tight font-headline md:text-6xl lg:text-7xl mt-4">
-            <span className="text-white">EDUCATION IS THE BEST </span>
-            <span className="text-white">KEY SUCCESS IN LIFE</span>
+            <span className="text-white">Unlock Your Potential with </span>
+            <span className="text-accent">Quality Education</span>
           </h1>
           <p className="mt-6 text-lg text-gray-200 md:text-xl max-w-2xl">
-            Donec vitae libero non enim placerat eleifend aliquam erat volutpat. Curabitur diam ex, consectetur et nulla et, commodo gravida lectus non.
+            Empowering students with knowledge and skills for a successful future. Join us to start your journey of excellence.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-start justify-start gap-4">
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto rounded-none">
-              <Link href="/courses">Discover More <ArrowRight className="ml-2 h-5 w-5" /></Link>
+            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 w-full sm:w-auto rounded-full px-8 py-6 text-lg font-bold uppercase tracking-wider">
+              <Link href="/courses">Our Courses <ArrowRight className="ml-2 h-5 w-5" /></Link>
             </Button>
-            <Button asChild size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full sm:w-auto rounded-none">
+            <Button asChild size="lg" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary w-full sm:w-auto rounded-full px-8 py-6 text-lg font-bold uppercase tracking-wider">
               <Link href="/contact">Contact Us <ArrowRight className="ml-2 h-5 w-5" /></Link>
             </Button>
           </div>
-        </div>
-      </section>
-
-      <section className="-mt-24 relative z-20 container">
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-0">
-            {infoCards.map((card, index) => (
-              <Card key={card.title} className={`rounded-none p-8 text-white ${index === 1 ? 'bg-accent' : 'bg-secondary'}`}>
-                <CardContent className="flex flex-col items-start p-0">
-                  <div className={`mb-6 ${index === 1 ? '' : 'text-accent'}`}>
-                    {React.cloneElement(card.icon, {className: "h-10 w-10 text-white"})}
-                  </div>
-                  <h3 className="text-2xl font-bold font-headline">{card.title}</h3>
-                  <p className="mt-4 text-gray-200">{card.description}</p>
-                  <Link href="#" className="mt-6 flex items-center font-semibold hover:underline">
-                    Read More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
         </div>
       </section>
 
@@ -111,32 +102,59 @@ export default function Home() {
                 )}
             </div>
             <div>
-                <p className="font-semibold text-accent"># About Our University</p>
-                <h2 className="text-4xl font-bold font-headline mt-4">A Few Words About the University</h2>
+                <p className="font-semibold text-accent uppercase tracking-wider">About Our Institute</p>
+                <h2 className="text-4xl font-bold font-headline mt-4">A Few Words About the Institute</h2>
+                <GoldSeparator className="justify-start my-6" />
                 <p className="mt-6 text-muted-foreground">Our community is being called to reimagine the future. As the only university where a renowned design school comes together with premier colleges, we are making learning more relevant and transformational.</p>
                 <p className="mt-4 text-muted-foreground">We are proud to offer top range in employment services such and asser payroll and benefits administrato management and assistance with global business range ploment employee readings from religious texts or literature are also commonly inc compliance.</p>
-                <div className="mt-8 space-y-4">
-                    <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 bg-accent text-accent-foreground rounded-full h-10 w-10 flex items-center justify-center font-bold">01</div>
-                        <div>
-                            <h4 className="font-bold text-lg">Doctoral Degrees</h4>
-                            <p className="text-muted-foreground">consectetur adipiscing elit sed do eiusmod tem incid idunt.</p>
-                        </div>
-                    </div>
-                     <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 bg-accent text-accent-foreground rounded-full h-10 w-10 flex items-center justify-center font-bold">02</div>
-                        <div>
-                            <h4 className="font-bold text-lg">Global Students</h4>
-                            <p className="text-muted-foreground">consectetur adipiscing elit sed do eiusmod tem incid idunt.</p>
-                        </div>
-                    </div>
-                </div>
-                <Button asChild size="lg" className="mt-8 bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-none">
+                <Button asChild size="lg" className="mt-8 bg-secondary text-secondary-foreground hover:bg-secondary/90 rounded-full px-8 py-6 text-lg font-bold uppercase tracking-wider">
                     <Link href="/courses">Read More <ArrowRight className="ml-2 h-5 w-5" /></Link>
                 </Button>
             </div>
         </div>
       </section>
+      
+      <section className="py-24 bg-muted">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+                <p className="font-semibold text-accent uppercase tracking-wider">Our Features</p>
+                <h2 className="text-4xl font-bold font-headline mt-4">Why Choose Us</h2>
+                <GoldSeparator className="mt-6" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {whyChooseUs.map((feature, index) => {
+                    const Icon = {
+                        BookOpen,
+                        Users,
+                        Award
+                    }[feature.icon];
+                    return (
+                        <Card key={index} className="bg-card text-center p-8 border-2 border-transparent hover:border-accent hover:shadow-2xl hover:-translate-y-2 transition-transform duration-300">
+                           <div className="flex justify-center mb-6">
+                             {Icon && <Icon className="h-16 w-16 text-accent" />}
+                           </div>
+                           <h3 className="text-2xl font-bold font-headline text-primary">{feature.title}</h3>
+                           <p className="mt-4 text-muted-foreground">{feature.description}</p>
+                        </Card>
+                    )
+                })}
+            </div>
+        </div>
+      </section>
+      
+      <section className="py-32 bg-fixed bg-cover bg-center bg-no-repeat bg-black/60 bg-blend-darken" style={{backgroundImage: "url('https://picsum.photos/seed/statsbg/1920/1080')"}}>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-white text-center">
+                {stats.map((stat, index) => (
+                    <div key={index} className="animate-fade-in">
+                        <h3 className="text-5xl md:text-6xl font-bold font-headline text-accent">{stat.number}</h3>
+                        <p className="mt-4 text-lg font-semibold uppercase tracking-widest">{stat.label}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+      </section>
+
     </div>
   );
 }
