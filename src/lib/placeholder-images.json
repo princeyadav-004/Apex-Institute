@@ -1,3 +1,58 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-home",
+      "description": "Students in a modern library setting",
+      "imageUrl": "https://picsum.photos/seed/homehero/1920/1080",
+      "imageHint": "students library"
+    },
+    {
+      "id": "course-1",
+      "description": "Close up on a computer screen with code",
+      "imageUrl": "https://picsum.photos/seed/course1/600/400",
+      "imageHint": "computer code"
+    },
+    {
+      "id": "course-2",
+      "description": "A person writing complex equations on a chalkboard",
+      "imageUrl": "https://picsum.photos/seed/course2/600/400",
+      "imageHint": "equations chalkboard"
+    },
+    {
+      "id": "course-3",
+      "description": "Business professionals collaborating around a table",
+      "imageUrl": "https://picsum.photos/seed/course3/600/400",
+      "imageHint": "business meeting"
+    },
+    {
+      "id": "course-4",
+      "description": "An artist's hands sculpting clay",
+      "imageUrl": "https://picsum.photos/seed/course4/600/400",
+      "imageHint": "sculpting clay"
+    },
+    {
+      "id": "faculty-1",
+      "description": "Portrait of a mature male professor",
+      "imageUrl": "https://picsum.photos/seed/faculty1/400/400",
+      "imageHint": "professor portrait"
+    },
+    {
+      "id": "faculty-2",
+      "description": "Portrait of a smiling female professor",
+      "imageUrl": "https://picsum.photos/seed/faculty2/400/400",
+      "imageHint": "professor portrait"
+    },
+    {
+      "id": "faculty-3",
+      "description": "Portrait of a young male instructor",
+      "imageUrl": "https://picsum.photos/seed/faculty3/400/400",
+      "imageHint": "instructor portrait"
+    },
+    {
+      "id": "faculty-4",
+      "description": "Portrait of a thoughtful female lecturer",
+      "imageUrl": "https://picsum.photos/seed/faculty4/400/400",
+      "imageHint": "lecturer portrait"
+    }
+  ]
 }
