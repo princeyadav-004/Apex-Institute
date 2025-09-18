@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Menu, GraduationCap, Phone, Mail, MapPin } from "lucide-react";
+import { Menu, GraduationCap } from "lucide-react";
 import React from "react";
 
 const navLinks = [
@@ -30,29 +30,6 @@ export function Header() {
 
   return (
     <header className={cn("sticky top-0 z-50 transition-all duration-300", isScrolled ? 'bg-background shadow-md' : 'bg-transparent')}>
-       <div className={cn("bg-secondary text-secondary-foreground py-2 text-sm", isScrolled ? 'hidden' : 'block transition-all duration-300')}>
-        <div className="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center gap-6">
-                <div className="flex items-center gap-2">
-                    <Phone className="h-4 w-4 text-accent" />
-                    <span>+123 4567 890</span>
-                </div>
-                <div className="flex items-center gap-2">
-                    <Mail className="h-4 w-4 text-accent" />
-                    <span>info@college.com</span>
-                </div>
-                 <div className="hidden md:flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-accent" />
-                    <span>3rd Floor Best World.</span>
-                </div>
-            </div>
-            <div className="hidden md:flex items-center gap-4">
-                <Link href="#" className="hover:text-accent">Login</Link>
-                <span className="text-muted-foreground">/</span>
-                 <Link href="#" className="hover:text-accent">Register</Link>
-            </div>
-        </div>
-      </div>
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           <GraduationCap className={cn("h-8 w-8", isScrolled ? 'text-primary' : 'text-accent')} />

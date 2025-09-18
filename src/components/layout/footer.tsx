@@ -4,6 +4,29 @@ import { GraduationCap, Phone, Mail, MapPin } from "lucide-react";
 export function Footer() {
   return (
     <footer className="bg-secondary text-secondary-foreground border-t">
+       <div className="bg-secondary text-secondary-foreground py-2 text-sm">
+        <div className="container mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center gap-6">
+                <div className="flex items-center gap-2">
+                    <Phone className="h-4 w-4 text-accent" />
+                    <span>+123 4567 890</span>
+                </div>
+                <div className="flex items-center gap-2">
+                    <Mail className="h-4 w-4 text-accent" />
+                    <span>info@college.com</span>
+                </div>
+                 <div className="hidden md:flex items-center gap-2">
+                    <MapPin className="h-4 w-4 text-accent" />
+                    <span>3rd Floor Best World.</span>
+                </div>
+            </div>
+            <div className="hidden md:flex items-center gap-4">
+                <Link href="#" className="hover:text-accent">Login</Link>
+                <span className="text-muted-foreground">/</span>
+                 <Link href="#" className="hover:text-accent">Register</Link>
+            </div>
+        </div>
+      </div>
       <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-8">
         <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
