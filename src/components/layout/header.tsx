@@ -33,8 +33,8 @@ export function Header() {
               key={link.href}
               href={link.href}
               className={cn(
-                "relative text-lg font-medium transition-colors hover:text-accent",
-                pathname === link.href ? "text-accent" : "text-primary"
+                "relative text-lg font-medium transition-colors hover:text-accent text-primary",
+                pathname === link.href ? "text-accent" : ""
               )}
             >
               {link.label}
@@ -52,7 +52,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-primary hover:bg-accent/20">
+              <Button variant="ghost" size="icon" className="text-primary transition-transform duration-200 hover:scale-110">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
