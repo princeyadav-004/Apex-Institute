@@ -26,8 +26,8 @@ export default function TestimonialsPage() {
             {testimonials.map((testimonial, index) => (
               <CarouselItem key={index}>
                 <div className="p-1">
-                  <Card className="border-0 shadow-none bg-transparent">
-                    <CardContent className="flex flex-col items-center justify-center p-6 text-center">
+                  <Card className="border shadow-lg bg-card">
+                    <CardContent className="flex flex-col items-center justify-center p-10 text-center">
                       <Quote className="w-12 h-12 text-accent mb-6" />
                       <p className="text-xl md:text-2xl font-serif italic text-primary leading-relaxed">
                         &ldquo;{testimonial.quote}&rdquo;
@@ -42,8 +42,8 @@ export default function TestimonialsPage() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="text-primary border-primary hover:bg-primary hover:text-primary-foreground" />
-          <CarouselNext className="text-primary border-primary hover:bg-primary hover:text-primary-foreground" />
+          <CarouselPrevious className="text-primary border-primary hover:bg-accent hover:text-accent-foreground" />
+          <CarouselNext className="text-primary border-primary hover:bg-accent hover:text-accent-foreground" />
         </Carousel>
       </div>
     </Container>

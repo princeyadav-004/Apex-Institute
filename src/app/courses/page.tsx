@@ -18,7 +18,7 @@ export default function CoursesPage() {
         {courses.map((course) => {
           const courseImage = PlaceHolderImages.find(p => p.id === course.image);
           return (
-            <Card key={course.name} className="group overflow-hidden border-2 hover:border-accent transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl bg-secondary">
+            <Card key={course.name} className="group overflow-hidden border-2 hover:border-accent transition-all duration-300 transform hover:-translate-y-1 hover:shadow-2xl bg-card">
               <CardHeader className="p-0">
                 {courseImage && (
                   <div className="relative h-64 w-full">
@@ -26,7 +26,7 @@ export default function CoursesPage() {
                       src={courseImage.imageUrl}
                       alt={courseImage.description}
                       fill
-                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
                       data-ai-hint={courseImage.imageHint}
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
@@ -35,8 +35,7 @@ export default function CoursesPage() {
               </CardHeader>
               <CardContent className="p-6">
                 <h3 className="relative font-headline text-2xl font-bold text-primary">
-                  <span className="relative z-10">{course.name}</span>
-                  <span className="absolute -bottom-2 left-0 h-1 w-0 bg-accent transition-all duration-300 group-hover:w-1/3 z-0"></span>
+                  {course.name}
                 </h3>
                 <p className="mt-4 text-muted-foreground">{course.tagline}</p>
               </CardContent>

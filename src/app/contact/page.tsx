@@ -13,7 +13,7 @@ export default function ContactPage() {
       </PageTitle>
 
       <div className="grid md:grid-cols-2 gap-16 animate-fade-in">
-        <div className="bg-card p-8 rounded-lg shadow-xl">
+        <div className="bg-card p-8 rounded-lg shadow-xl border">
           <h2 className="text-2xl font-bold font-headline mb-6 text-primary">Send us a Message</h2>
           <ContactForm />
         </div>
@@ -28,7 +28,7 @@ export default function ContactPage() {
           </div>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
-              <div className="bg-accent p-3 rounded-full text-accent-foreground">
+              <div className="bg-accent/10 p-3 rounded-full text-accent">
                 <MapPin className="h-6 w-6" />
               </div>
               <div>
@@ -37,7 +37,7 @@ export default function ContactPage() {
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <div className="bg-accent p-3 rounded-full text-accent-foreground">
+              <div className="bg-accent/10 p-3 rounded-full text-accent">
                 <Phone className="h-6 w-6" />
               </div>
               <div>
@@ -46,7 +46,7 @@ export default function ContactPage() {
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <div className="bg-accent p-3 rounded-full text-accent-foreground">
+              <div className="bg-accent/10 p-3 rounded-full text-accent">
                 <Mail className="h-6 w-6" />
               </div>
               <div>

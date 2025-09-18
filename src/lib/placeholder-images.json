@@ -2,9 +2,21 @@
   "placeholderImages": [
     {
       "id": "hero-home",
-      "description": "Students in a modern library setting",
-      "imageUrl": "https://picsum.photos/seed/homehero/1920/1080",
-      "imageHint": "students library"
+      "description": "A graduate smiling and holding a diploma",
+      "imageUrl": "https://picsum.photos/seed/gradstudent/1920/1080",
+      "imageHint": "graduate diploma"
+    },
+    {
+      "id": "about-1",
+      "description": "Students walking through university gates",
+      "imageUrl": "https://picsum.photos/seed/unigates/600/800",
+      "imageHint": "university students"
+    },
+    {
+      "id": "about-2",
+      "description": "Female student holding books on campus",
+      "imageUrl": "https://picsum.photos/seed/studentbooks/600/800",
+      "imageHint": "student campus"
     },
     {
       "id": "course-1",
