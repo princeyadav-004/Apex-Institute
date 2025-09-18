@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -18,22 +19,13 @@ const navLinks = [
 
 export function Header() {
   const pathname = usePathname();
-  const [isScrolled, setIsScrolled] = React.useState(false);
-
-  React.useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <header className={cn("sticky top-0 z-50 transition-all duration-300", isScrolled ? 'bg-background shadow-md' : 'bg-transparent')}>
+    <header className="sticky top-0 z-50 transition-all duration-300 bg-background shadow-md">
       <div className="container mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
-          <GraduationCap className={cn("h-8 w-8", isScrolled ? 'text-primary' : 'text-accent')} />
-          <span className={cn("text-3xl font-bold font-headline", isScrolled ? 'text-primary' : 'text-white')}>APEX</span>
+          <GraduationCap className="h-8 w-8 text-primary" />
+          <span className="text-3xl font-bold font-headline text-primary">APEX</span>
         </Link>
         <nav className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
@@ -42,7 +34,7 @@ export function Header() {
               href={link.href}
               className={cn(
                 "relative text-lg font-medium transition-colors hover:text-accent",
-                pathname === link.href ? "text-accent" : (isScrolled ? "text-primary" : "text-white")
+                pathname === link.href ? "text-accent" : "text-primary"
               )}
             >
               {link.label}
@@ -60,7 +52,7 @@ export function Header() {
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={cn(isScrolled ? 'text-primary' : 'text-white', 'hover:bg-accent/20')}>
+              <Button variant="ghost" size="icon" className="text-primary hover:bg-accent/20">
                 <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
